@@ -1,0 +1,8 @@
+src/.vs/LpDumper/v14/.suo
+*.exe
+*.pdb
+src/LpDumper.ConsoleTest/bin/Debug/LpDumper.dll
+*.config
+src/LpDumper.ConsoleTest/bin/Release/LpDumper.ConsoleTest.vshost.exe.manifest
+*.dll
+src/LpDumper.ConsoleTest/obj/Debug/build.force
