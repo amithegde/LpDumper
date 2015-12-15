@@ -1,5 +1,5 @@
 # LpDumper
-Makes [LinqPad's][1] `Dump()` method available on Visual Studio
+Makes [LinqPad's][1] `Dump()` method available in Visual Studio
 
 #How to use?
 - include a reference to [LpDumper nuget packge][2] 
