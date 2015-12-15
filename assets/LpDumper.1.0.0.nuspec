@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>LpDumper</id>
+        <version>1.0.0</version>
+        <title>LpDumper</title>
+        <authors>Amit Hegde</authors>
+        <licenseUrl>https://github.com/amithegde/LpDumper/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/amithegde/LpDumper</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>My package description.</description>
+        <summary>Makes LinqPad's Dump() metod available in Visual Studio</summary>
+        <tags>LinqPad, Dump, Visualizer</tags>
+        <dependencies>
+            <dependency id="LINQPad" version="4.51.3" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\..\Documents\GitHub\LpDumper\src\LpDumper\bin\Release\LpDumper.dll" target="lib\LpDumper.dll" />
+        <file src="..\..\Documents\GitHub\LpDumper\src\LpDumper\bin\Release\LpDumper.pdb" target="lib\LpDumper.pdb" />
+    </files>
+</package>
