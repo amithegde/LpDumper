@@ -9,4 +9,4 @@ Makes [LinqPad's][1] `Dump()` method available in Visual Studio
 ![](https://raw.githubusercontent.com/amithegde/LpDumper/master/assets/lpDumper.png)
 
 [1]:http://linqpad.net
-[2]:https://www.nuget.org/packages/LpDumper/1.0.0
+[2]:https://www.nuget.org/packages/LpDumper
