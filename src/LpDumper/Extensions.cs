@@ -1,21 +1,18 @@
-﻿namespace LpDumper
+﻿using LINQPad;
+using System.Diagnostics;
+using System.IO;
+
+namespace LpDumper
 {
     public static class Extensions
     {
         /// <summary>
-        /// makes Dump method available for all objects and loads result in a Viewer
+        /// makes Dump method available for all objects and loads result in browser
         /// </summary>
-        /// <param name="obj"></param>
-        public static void Dump(this object obj)
+        /// <param name="source"></param>
+        public static T Dump<T>(this T source)
         {
-            try
-            {
-                LpDumpVisualizer.Dump(obj);
-            }
-            catch (System.Exception)
-            {
-                LpDumpVisualizer.DumpFile(obj);
-            }
+            return LpDumpVisualizer.Dump(source);
         }
     }
 }

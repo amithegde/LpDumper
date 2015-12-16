@@ -20,23 +20,16 @@ namespace LpDumper
         }
 
         /// <summary>
-        /// Loads Viewer with rendered object data
-        /// </summary>
-        /// <param name="obj">source object</param>
-        internal static void Dump(dynamic obj)
-        {
-            new Viewer { VisualizerValue = GetLpFormattedText(obj) }.ShowDialog();
-        }
-
-        /// <summary>
         /// Writes rendered output to a temp file and opens it up in browser
         /// </summary>
-        /// <param name="obj">source boject</param>
-        internal static void DumpFile(dynamic obj)
+        /// <param name="obj">source object</param>
+        internal static T Dump<T>(T sourceObj)
         {
             string filePath = Path.GetTempFileName() + ".htm";
-            File.WriteAllText(filePath, GetLpFormattedText(obj));
+            File.WriteAllText(filePath, GetLpFormattedText(sourceObj));
             Process.Start(filePath);
+
+            return sourceObj;
         }
     }
 }
