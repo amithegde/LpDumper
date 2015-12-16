@@ -26,7 +26,6 @@ namespace LpDumper.ConsoleTest
             Debugger.Break();
 
             group.Dump();
-            group.DumpFile();
 
             Debugger.Break();
             //Open immediate window and type `group.Dump();`

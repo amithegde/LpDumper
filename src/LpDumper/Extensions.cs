@@ -8,16 +8,14 @@
         /// <param name="obj"></param>
         public static void Dump(this object obj)
         {
-            LpDumpVisualizer.Dump(obj);
-        }
-
-        /// <summary>
-        /// makes Dump method available for all objects, writes result to a temp file and opens it in browser
-        /// </summary>
-        /// <param name="obj"></param>
-        public static void DumpFile(this object obj)
-        {
-            LpDumpVisualizer.DumpFile(obj);
+            try
+            {
+                LpDumpVisualizer.Dump(obj);
+            }
+            catch (System.Exception)
+            {
+                LpDumpVisualizer.DumpFile(obj);
+            }
         }
     }
 }
