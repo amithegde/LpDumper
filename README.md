@@ -2,7 +2,8 @@
 Makes [LinqPad's][1] `Dump()` method available in Visual Studio
 
 #How to use?
-- include a reference to [LpDumper nuget packge][2] 
+- include a reference to [LpDumper nuget packge][2]
+- add `using LpDumper;` the class
 - call `Dump()`on any object
 - output opens up on default browser.
 
