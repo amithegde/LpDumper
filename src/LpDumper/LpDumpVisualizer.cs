@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using LINQPad;
+using System.Diagnostics;
 using System.IO;
 
 namespace LpDumper
@@ -6,30 +7,29 @@ namespace LpDumper
     public class LpDumpVisualizer
     {
         /// <summary>
-        /// Renders Dump output for the object using LinqPad
+        /// Uses LinqPad's Dump method to render the <see cref="source"/> as HTML file and opens it up on default browser
+        /// Supports chaining Dump() method in same expression
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="obj">source object</param>
-        /// <returns></returns>
-        private static string GetLpFormattedText<T>(T obj)
+        /// <typeparam name="T">Type of the object</typeparam>
+        /// <param name="source">source object</param>
+        /// <param name="title">Title for the Dump</param>
+        /// <returns>Returns same object to support method chaining</returns>
+        public static T Dump<T>(T source, string title = "")
         {
-            var writer = LINQPad.Util.CreateXhtmlWriter();
-            writer.Write(obj);
+            var text = Path.GetTempFileName() + ".html";
+            using (TextWriter textWriter = Util.CreateXhtmlWriter(true))
+            {
+                textWriter.Write(source);
+                var body = string.IsNullOrWhiteSpace(title)
+                    ? textWriter.ToString()
+                    : string.Format("<strong>{0}</strong></br>{1}", title, textWriter);
 
-            return writer.ToString();
-        }
+                File.WriteAllText(text, body);
+            }
 
-        /// <summary>
-        /// Writes rendered output to a temp file and opens it up in browser
-        /// </summary>
-        /// <param name="obj">source object</param>
-        internal static T Dump<T>(T sourceObj)
-        {
-            string filePath = Path.GetTempFileName() + ".htm";
-            File.WriteAllText(filePath, GetLpFormattedText(sourceObj));
-            Process.Start(filePath);
+            Process.Start(text);
 
-            return sourceObj;
+            return source;
         }
     }
 }

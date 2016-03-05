@@ -1,8 +1,4 @@
-﻿using LINQPad;
-using System.Diagnostics;
-using System.IO;
-
-namespace LpDumper
+﻿namespace LpDumper
 {
     public static class Extensions
     {
@@ -10,9 +6,10 @@ namespace LpDumper
         /// makes Dump method available for all objects and loads result in browser
         /// </summary>
         /// <param name="source"></param>
-        public static T Dump<T>(this T source)
+        /// <param name="title"></param>
+        public static T Dump<T>(this T source, string title = "")
         {
-            return LpDumpVisualizer.Dump(source);
+            return LpDumpVisualizer.Dump(source, title);
         }
     }
 }

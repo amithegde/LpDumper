@@ -6,3 +6,6 @@ src/LpDumper.ConsoleTest/bin/Debug/LpDumper.dll
 src/LpDumper.ConsoleTest/bin/Release/LpDumper.ConsoleTest.vshost.exe.manifest
 *.dll
 src/LpDumper.ConsoleTest/obj/Debug/build.force
+*.cache
+src/LpDumper.ConsoleTest/bin/Debug/LpDumper.ConsoleTest.vshost.exe.manifest
+*.txt
